@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Category\CategoryController;
+use App\Http\Controllers\Product\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::delete('/categories/{id}', [CategoryController::class, 'destroy']);
 
 Route::apiResource('categories', CategoryController::class);
+Route::apiResource('products', ProductController::class);
