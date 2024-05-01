@@ -27,7 +27,8 @@ class SaleResource extends JsonResource
             "clientName" => $this->client_name,
             "clientLastname" => $this->client_lastname,
             "user" => $user,
-            "products" => $products,
+            "products" => new SaleDetailCollection( $products ),
+            // "products" => $products,
             'createdAt' => $this->created_at
         ];
     }
