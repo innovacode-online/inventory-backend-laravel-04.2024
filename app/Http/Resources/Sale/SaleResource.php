@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\Sale;
 
+use App\Http\Resources\Auth\UserResource;
 use App\Models\Sale;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -26,7 +27,7 @@ class SaleResource extends JsonResource
             "id" => $this->id,
             "clientName" => $this->client_name,
             "clientLastname" => $this->client_lastname,
-            "user" => $user,
+            "user" => new UserResource($user),
             "products" => new SaleDetailCollection( $products ),
             // "products" => $products,
             'createdAt' => $this->created_at
