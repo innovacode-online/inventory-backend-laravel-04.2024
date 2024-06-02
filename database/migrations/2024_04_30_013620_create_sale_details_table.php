@@ -20,7 +20,8 @@ return new class extends Migration
 
             // PRODUCTO DE LA VENTA
             $table->foreignId('product_id')
-                ->constrained();
+                ->constrained()
+                ->onDelete('cascade');
 
             $table->string('product_name');
             $table->string('product_slug');
