@@ -77,7 +77,7 @@ class CategoryController extends Controller
 
         return response()->json([
             "message" => "La categoria ". $category->name ." fue actualizada",
-            new CategoryResource($category),
+            "category" => new CategoryResource($category),
         ]);
 
     }
